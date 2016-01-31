@@ -1,2 +1,2 @@
-# sistema-cobranca
-Sisteminha para geração de boleto bancario.
+# Sistema de cobranca
+>> Sisteminha para geração de boleto bancario.
