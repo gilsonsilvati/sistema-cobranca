@@ -15,11 +15,9 @@
 	   	</resource-env-ref-type>
   	</resource-env-ref>
  
-<!--  	
   	<welcome-file-list>
-    	<welcome-file>RegistroPortaria.xhtml</welcome-file>
+    	<welcome-file>NovaCobranca.xhtml</welcome-file>
   	</welcome-file-list>
--->  	
 
 	<context-param>
 		<param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
