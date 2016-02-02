@@ -1,0 +1,2 @@
+INSERT INTO conta_bancaria (agencia, digito_agencia, numero, digito_conta, codigo_carteira) VALUES (1010, '0', 2020, '0', 6);
+INSERT INTO cedente (nome, cnpj, codigo_conta_bancaria) VALUES ('AlgaWorks Softwares, Treinamentos e Serviços Ltda', '10.687.566/0001-97', 1);
