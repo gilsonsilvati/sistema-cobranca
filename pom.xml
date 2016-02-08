@@ -176,6 +176,20 @@
 			<version>0.2.3-SNAPSHOT</version>
 		</dependency>
 		
+		<!-- Texgit para arquivo de retorno -->
+		<dependency>
+			<groupId>org.jrimum</groupId>
+			<artifactId>jrimum-texgit</artifactId>
+			<version>0.2.0-SNAPSHOT</version>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.jrimum</groupId>
+					<artifactId>jrimum-utilix</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
 		<!-- API de Servlet -->
 		<dependency>
 	        <groupId>javax.servlet</groupId>
