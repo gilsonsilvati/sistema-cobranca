@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -17,6 +18,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
@@ -41,6 +43,7 @@ public class Cobranca implements Serializable {
 		this.codigo = codigo;
 	}
 	
+	@NotNull
 	public BigDecimal getValor() {
 		return valor;
 	}
@@ -49,6 +52,7 @@ public class Cobranca implements Serializable {
 	}
 	
 	@Temporal(TemporalType.DATE)
+	@NotNull
 	@Column(name = "data_vencimento")
 	public Date getDataVencimento() {
 		return dataVencimento;
@@ -57,7 +61,7 @@ public class Cobranca implements Serializable {
 		this.dataVencimento = dataVencimento;
 	}
 	
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinColumn(name = "codigo_sacado")
 	public Sacado getSacado() {
 		return sacado;

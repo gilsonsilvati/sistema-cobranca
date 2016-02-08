@@ -5,6 +5,10 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:o="http://omnifaces.org/ui">
+	
+	<f:metadata>
+		<f:viewAction action="#{novaCobrancaBean.inicializar}" />
+	</f:metadata>
 
 	<ui:define name="titulo">Nova cobrança</ui:define>
 
@@ -16,7 +20,8 @@
 
 			<p:toolbar style="margin-top: 20px">
 				<f:facet name="left">
-					<p:commandButton value="Emitir" ajax="false" icon="fa fa-file-pdf-o" />
+					<p:commandButton value="Emitir" ajax="false" icon="fa fa-file-pdf-o"
+						actionListener="#{novaCobrancaBean.emitir}" />
 				</f:facet>
 			</p:toolbar>
 
@@ -24,15 +29,16 @@
 					columnClasses="rotulo, campo">
 					
 				<p:outputLabel value="Valor a cobrar do cliente:" for="valor" />
-				<p:inputText id="valor" size="10" styleClass="moeda">
+				<p:inputText id="valor" size="10" styleClass="moeda" value="#{novaCobrancaBean.cobranca.valor}">
 					<f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
 				</p:inputText>
 
-				<p:outputLabel value="Está cobrança vence em:" for="dataVencimento" />
-				<p:calendar id="dataVencimento" size="10" pattern="dd/MM/yyyy" />
+				<p:outputLabel value="Esta cobrança vence em:" for="dataVencimento" />
+				<p:calendar id="dataVencimento" size="10" pattern="dd/MM/yyyy"
+					value="#{novaCobrancaBean.cobranca.dataVencimento}" />
 
 				<p:outputLabel value="Nome cliente:" for="nomeCliente" />
-				<p:inputText id="nomeCliente" size="40" />
+				<p:inputText id="nomeCliente" size="40" value="#{novaCobrancaBean.cobranca.sacado.nome}" />
 				
 			</p:panelGrid>
 		</h:form>

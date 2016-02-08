@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "sacado")
@@ -29,6 +30,7 @@ public class Sacado implements Serializable {
 		this.codigo = codigo;
 	}
 	
+	@NotBlank
 	public String getNome() {
 		return nome;
 	}
