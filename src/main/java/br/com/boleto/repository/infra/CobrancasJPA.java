@@ -17,6 +17,11 @@ public class CobrancasJPA implements Cobrancas {
 	public Cobranca guardar(Cobranca cobranca) {
 		return manager.merge(cobranca);
 	}
+
+	@Override
+	public Cobranca porCodigo(Long codigoCobranca) {
+		return manager.find(Cobranca.class, codigoCobranca);
+	}
 	
 	
 

@@ -6,6 +6,7 @@ import br.com.boleto.model.Cobranca;
 
 public interface Cobrancas extends Serializable {
 
-	Cobranca guardar(Cobranca cobranca);
+	public Cobranca guardar(Cobranca cobranca);
+	public Cobranca porCodigo(Long codigoCobranca);
 
 }
